@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asudia Boosters</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fontsgeek.com/fonts/penumbra-serif-std-semibold" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <img id="bg-image" src="backgrounds/background.png" alt="Background">
+    <img id="corner-logo" src="/ui/logo_asudia.png" alt="Asudia Logo"/>
+
+    <div id="flash"></div>
+
+    <div id="overlay">
+      <img src="/ui/boosters-title.png" alt="BOOSTERS" class="boosters-title">
+
+      <div id="shop">
+        <button class="booster-btn active" data-booster="dragonborn"
+          style="--glow: rgba(255, 51, 0, 0.95);">DRAGON BORN</button>
+
+        <button class="booster-btn" data-booster="abyssescourants"
+          style="--glow: rgba(0,200,255,0.95);">ABYSSES & COURANTS</button>
+
+        <button class="booster-btn" data-booster="skieswings"
+          style="--glow: rgba(233, 232, 235, 0.95);">SKIES & WINGS</button>
+
+        <button class="booster-btn" data-booster="royaume_des_morts"
+          style="--glow: rgba(154, 90, 207, 0.95);">ROYAUME DES MORTS</button>
+
+        <button class="booster-btn" data-booster="corruption"
+          style="--glow: rgba(93, 18, 192, 0.95);">CORRUPTION</button>
+
+        <button class="booster-btn" data-booster="elementaltitans"
+          style="--glow: rgba(224, 76, 7, 0.95);">ELEMENTAL TITANS</button>
+
+        <button class="booster-btn" data-booster="forestpeoples"
+          style="--glow: rgba(47, 172, 95, 0.95);">FOREST PEOPLES</button>
+
+        <button class="booster-btn" data-booster="wildlife"
+          style="--glow: rgba(40, 201, 107, 0.85);">WILDLIFE</button>
+
+        <button id="open-collection" class="booster-btn secondary">Collection</button>
+      </div>
+
+      <div id="shop-hint">Choisis un booster puis clique sur le paquet</div>
+    </div>
+
+    <!-- ✅ Zone cliquable secrète (invisible) -->
+    <div id="secret-hotspot" aria-label="Zone secrète"></div>
+
+    <!-- ✅ Popup -->
+    <div id="secret-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-box-wrap">
+        <div class="modal-box">
+          <div class="modal-title">Message</div>
+          <div class="modal-text">
+            👀 Bravo, tu as trouvé la zone secrète !<br>
+            Prend ce message en screen et envoie le à un staff<br>
+            tu aurras une surprise 😉
+          </div>
+          <button id="secret-close" class="modal-btn">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="collection-panel" class="hidden">
+      <div class="collection-header">
+        <div>
+          <div class="collection-title">Collection</div>
+          <div id="collection-stats" class="collection-stats"></div>
+        </div>
+
+        <div class="collection-actions">
+          <select id="collection-sort">
+            <option value="rarity">Tri : Rareté</option>
+            <option value="name">Tri : Nom</option>
+            <option value="count">Tri : Quantité</option>
+          </select>
+
+          <button id="collection-reset">Reset</button>
+          <button id="collection-close">Fermer</button>
+        </div>
+      </div>
+
+      <div id="collection-grid" class="collection-grid"></div>
+    </div>
+
+    <div id="end-actions" class="hidden">
+  <button id="ok-btn" class="img-btn" type="button">
+    <img src="/ui/ok.png" alt="OK">
+  </button>
+
+  <button id="again-btn" class="img-btn" type="button">
+    <img src="/ui/again.png" alt="En ouvrir encore un">
+  </button>
+</div>
+
+    <canvas id="scene"></canvas>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
