@@ -1,4 +1,5 @@
 import { CARDS } from "./cards.js";
+import "./counter.js";
 
 // odds = { common: 0.78, rare: 0.18, epic: 0.035, legendary: 0.005 }
 function rollRarity(odds) {
